@@ -44,6 +44,13 @@ public class TestProjectApplication {
                 log.info(gundogdu.toString());
             });
             log.info("");
+
+            log.info("Customer found with findTopByFirstNameIsStartingWith('C'):");
+            log.info("--------------------------------------------");
+            repository.findTopByFirstNameIsStartingWith("C").forEach(first -> {
+                log.info(first.toString());
+            });
+            log.info("");
         };
     }
 }
