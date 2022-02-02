@@ -21,9 +21,9 @@ public class TestProjectApplication {
     public CommandLineRunner demo(CustomerRepository repository) {
         return (args) -> {
 
-            repository.save(new Customer("Onur", "Gündoğdu"));
-            repository.save(new Customer("Chloe", "O'Brian"));
-            repository.save(new Customer("Kim", "Bauer"));
+            repository.save(new Customer("Onur", "Gündoğdu",28));
+            repository.save(new Customer("Chloe", "O'Brian",35));
+            repository.save(new Customer("Kim", "Bauer",37));
 
             log.info("Customers found with findAll():");
             log.info("-------------------------------");
@@ -51,6 +51,13 @@ public class TestProjectApplication {
                 log.info(first.toString());
             });
             log.info("");
+
+            log.info("Customer age found equals 28");
+            log.info("--------------------------------------------");
+            repository.findByAgeEquals(28).forEach(age->{
+                log.info(age.toString());
+            });
+
         };
     }
 }

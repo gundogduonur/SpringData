@@ -13,20 +13,22 @@ public class Customer {
     private Long id;
     private String firstName;
     private String lastName;
+    private Integer age;
 
     public Customer()
     {
 
     }
-    public Customer(String firstName,String lastName)
+    public Customer(String firstName,String lastName,Integer age)
     {
+        this.age=age;
         this.firstName=firstName;
         this.lastName=lastName;
     }
 
     @Override
     public String toString() {
-        return String.format("Customer[id=%d, firstName='%s', lastName='%s']",id,firstName,lastName);
+        return String.format("Customer[id=%d, firstName='%s', lastName='%s', age='%d']",id,firstName,lastName,age);
     }
 
     public Long getId() {
@@ -39,5 +41,9 @@ public class Customer {
 
     public String getLastName() {
         return lastName;
+    }
+
+    public Integer getAge() {
+        return age;
     }
 }
