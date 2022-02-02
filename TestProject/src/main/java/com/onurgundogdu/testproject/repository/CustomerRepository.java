@@ -12,5 +12,6 @@ public interface CustomerRepository extends CrudRepository<Customer,Long> {
     List<Customer> findByAgeEquals(Integer age);
     List<Customer> findByAgeGreaterThanEqual(Integer age);
     List<Customer> findByAgeBetween(Integer first,Integer second);
+    List<Customer> findAllByAgeIsNotNull();
 
 }

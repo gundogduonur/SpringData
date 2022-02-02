@@ -66,6 +66,12 @@ public class TestProjectApplication {
                 log.info(between.toString());
             });
 
+            log.info("Customer age not null");
+            log.info("--------------------------------------------");
+            repository.findAllByAgeIsNotNull().forEach(notNull->{
+                log.info(notNull.toString());
+            });
+
         };
     }
 }
