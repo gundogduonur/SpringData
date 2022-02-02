@@ -57,6 +57,14 @@ public class TestProjectApplication {
             repository.findByAgeEquals(28).forEach(age->{
                 log.info(age.toString());
             });
+            log.info("Customer age found greater and equals 35");
+            log.info("--------------------------------------------");
+            repository.findByAgeGreaterThanEqual(35).forEach(age->{
+                log.info(age.toString());
+            });
+            repository.findByAgeBetween(27,36).forEach(between->{
+                log.info(between.toString());
+            });
 
         };
     }

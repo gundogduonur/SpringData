@@ -10,5 +10,7 @@ public interface CustomerRepository extends CrudRepository<Customer,Long> {
     Customer findById(long id);
     List<Customer> findTopByFirstNameIsStartingWith(String firstname);
     List<Customer> findByAgeEquals(Integer age);
+    List<Customer> findByAgeGreaterThanEqual(Integer age);
+    List<Customer> findByAgeBetween(Integer first,Integer second);
 
 }
